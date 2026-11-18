@@ -9,3 +9,6 @@ class Schedule(Base):
 class Delivery(Base):
  __tablename__='deliveries'
  id=Column(Integer,primary_key=True); schedule_id=Column(Integer); run_id=Column(Integer); due_key=Column(String(120),unique=True); created=Column(Float); payload=Column(JSON)
+class Attribution(Base):
+ __tablename__='report_attributions'
+ id=Column(Integer,primary_key=True); pair_key=Column(String(80),unique=True); base_run=Column(Integer); compare_run=Column(Integer); period=Column(String(120)); result=Column(JSON); created=Column(Float)
